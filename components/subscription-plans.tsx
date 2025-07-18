@@ -73,7 +73,7 @@ const premiumBox = {
   id: "premium_growing_box",
   name: "Premium Growing Box",
   description: "Everything you need for successful cannabis cultivation - from premium genetics to professional equipment and expert guidance",
-  image: "/images/subscription/cbd-premium-box.png",
+  image: "/images/subscription/premium-delivery-box.png",
   value: "€60-80",
   items: "6-8 premium items"
 }
