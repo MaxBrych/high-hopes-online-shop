@@ -6,6 +6,9 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 import { Separator } from "@/components/ui/separator"
 import { WishlistContent } from "@/components/account/wishlist-content"
 
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: "My Wishlist | buyhigh",
   description: "Your saved seeds and growing equipment",

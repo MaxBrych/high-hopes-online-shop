@@ -8,6 +8,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ShoppingBag, Heart, Sprout, TrendingUp, Package, Clock } from "lucide-react"
 
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: "My Account | GrowHigh",
   description: "Manage your account, orders, and growing journey",

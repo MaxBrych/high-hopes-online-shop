@@ -7,7 +7,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Package, Mail, Calendar, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-function SuccessContent() {
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
+
+function SuccessContent({ locale }: { locale: string }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <PromoBar />
@@ -94,13 +97,13 @@ function SuccessContent() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-green-600 hover:bg-green-700">
-              <Link href="/">
+              <Link href={locale === 'de' ? '/' : '/en'}>
                 <ArrowRight className="mr-2 h-4 w-4" />
                 Weiter einkaufen
               </Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/account">Mein Konto verwalten</Link>
+              <Link href={locale === 'de' ? '/account' : '/en/account'}>Mein Konto verwalten</Link>
             </Button>
           </div>
 
@@ -108,7 +111,7 @@ function SuccessContent() {
           <div className="mt-8 p-4 bg-blue-50 rounded-lg">
             <p className="text-sm text-gray-600">
               Haben Sie Fragen zu Ihrem Abonnement?{" "}
-              <Link href="/kontakt" className="text-green-600 hover:underline">
+              <Link href={locale === 'de' ? '/kontakt' : '/en/kontakt'} className="text-green-600 hover:underline">
                 Kontaktieren Sie unseren Kundenservice
               </Link>
             </p>
@@ -121,10 +124,14 @@ function SuccessContent() {
   )
 }
 
-export default function SubscriptionSuccessPage() {
+export default function SubscriptionSuccessPage({
+  params: { locale }
+}: {
+  params: { locale: string }
+}) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <SuccessContent />
+      <SuccessContent locale={locale} />
     </Suspense>
   )
 }

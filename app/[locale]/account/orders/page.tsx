@@ -1,7 +1,13 @@
+import { Header } from "@/components/header"
+import { PromoBar } from "@/components/promo-bar"
+import { Footer } from "@/components/footer"
 import { AccountSidebar } from "@/components/account-sidebar"
-import { OrdersContent } from "@/components/account/orders-content"
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
+import { OrdersContent } from "@/components/account/orders-content"
+
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
 
 export default function OrdersPage() {
   return (

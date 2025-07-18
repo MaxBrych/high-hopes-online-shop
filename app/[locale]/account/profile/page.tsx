@@ -6,6 +6,9 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 import { Separator } from "@/components/ui/separator"
 import { ProfileContent } from "@/components/account/profile-content"
 
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: "Profile Settings | buyhigh",
   description: "Manage your personal information and account preferences",
