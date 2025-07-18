@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { CartDrawer } from "@/components/cart-drawer"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import { Search, Menu, User, Heart, Phone, Mail, MapPin, Clock, X } from "lucide-react"
 
 const navigation = [
@@ -100,6 +101,9 @@ export function Header() {
             <Button variant="ghost" size="sm" className="md:hidden p-2">
               <Search className="w-5 h-5" />
             </Button>
+
+            {/* Language Switcher */}
+            <LanguageSwitcher />
 
             {/* Account */}
             <Link href="/account">

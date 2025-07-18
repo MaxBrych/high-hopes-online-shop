@@ -1,0 +1,305 @@
+{
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "collections": "Collections",
+    "about": "About",
+    "account": "Account",
+    "cart": "Cart",
+    "search": "Search",
+    "menu": "Menu"
+  },
+  "hero": {
+    "premium_experience": {
+      "title": "Premium Cannabis Experience",
+      "subtitle": "Discover wellness through nature",
+      "description": "Explore our curated selection of premium cannabis products, carefully sourced for quality and potency.",
+      "cta": "Shop Now"
+    },
+    "natural_growing": {
+      "title": "Natural Growing Solutions",
+      "subtitle": "From seed to harvest",
+      "description": "Everything you need for successful cultivation, from premium seeds to professional growing equipment.",
+      "cta": "Explore Seeds"
+    },
+    "lifestyle_wellness": {
+      "title": "Lifestyle & Wellness",
+      "subtitle": "Elevate your daily routine",
+      "description": "Premium accessories and wellness products designed for the modern cannabis enthusiast.",
+      "cta": "Shop Lifestyle"
+    },
+    "features": {
+      "premium_quality": {
+        "title": "Premium Quality",
+        "description": "Carefully curated products"
+      },
+      "lab_tested": {
+        "title": "Lab Tested",
+        "description": "Third-party verified"
+      },
+      "discreet_shipping": {
+        "title": "Discreet Shipping",
+        "description": "Fast & secure delivery"
+      }
+    }
+  },
+  "categories": {
+    "title": "Shop by Category",
+    "description": "Discover our carefully curated selection of premium cannabis products and accessories",
+    "cbd_products": {
+      "title": "CBD Products",
+      "description": "Premium CBD oils, gummies & wellness"
+    },
+    "cannabis_seeds": {
+      "title": "Cannabis Seeds",
+      "description": "Premium genetics & strains"
+    },
+    "glass_bongs": {
+      "title": "Glass & Bongs",
+      "description": "High-quality glass pieces"
+    },
+    "accessories": {
+      "title": "Accessories",
+      "description": "Grinders, papers & tools"
+    }
+  },
+  "products": {
+    "featured_title": "Featured Products",
+    "featured_description": "Discover our most popular items",
+    "view_all": "View All Products",
+    "add_to_cart": "Add to Cart",
+    "quick_view": "Quick View",
+    "out_of_stock": "Out of Stock",
+    "sale": "Sale",
+    "new": "New"
+  },
+  "collections": {
+    "title": "Curated Collections",
+    "description": "Thoughtfully selected products for every lifestyle",
+    "wellness_collection": {
+      "title": "Wellness Collection",
+      "description": "Premium CBD products for your daily wellness routine"
+    },
+    "natural_living": {
+      "title": "Natural Living",
+      "description": "Organic and natural products for a healthier lifestyle"
+    },
+    "explore_collection": "Explore Collection"
+  },
+  "about": {
+    "title": "Your Trusted Partner in",
+    "title_highlight": "Cannabis Wellness",
+    "description_1": "We're passionate about providing premium cannabis products that enhance your wellness journey. Our carefully curated selection includes the finest CBD products, premium seeds, and high-quality accessories.",
+    "description_2": "Every product is lab-tested for quality and potency, ensuring you receive only the best. We believe in transparency, education, and supporting our community's wellness goals.",
+    "stats": {
+      "customers": "Happy Customers",
+      "experience": "Years Experience",
+      "products": "Premium Products",
+      "countries": "Countries Served"
+    },
+    "learn_more": "Learn More",
+    "shop_products": "Shop Products"
+  },
+  "testimonials": {
+    "title": "What Our Customers Say",
+    "description": "Join thousands of satisfied customers who trust us for their cannabis wellness needs",
+    "testimonial_1": {
+      "text": "Amazing quality CBD products! The oil has really helped with my sleep and anxiety. Fast shipping and discreet packaging.",
+      "name": "Sarah M.",
+      "location": "Berlin, Germany",
+      "product": "CBD Oil 15%"
+    },
+    "testimonial_2": {
+      "text": "Best seed bank I've found. Excellent germination rates and the customer service is top-notch. Highly recommended!",
+      "name": "Marcus K.",
+      "location": "Amsterdam, Netherlands",
+      "product": "Premium Seeds"
+    },
+    "testimonial_3": {
+      "text": "The glass pieces are beautiful and functional. Great quality at fair prices. Will definitely order again.",
+      "name": "Elena R.",
+      "location": "Barcelona, Spain",
+      "product": "Glass Collection"
+    },
+    "verified_purchase": "Verified Purchase"
+  },
+  "deals": {
+    "title": "Special Deals",
+    "description": "Don't miss out on these amazing offers",
+    "limited_time": "Limited Time",
+    "view_all_deals": "View All Deals"
+  },
+  "subscription": {
+    "badge": "Premium Subscription",
+    "hero_title": "Get Everything You Need to",
+    "hero_title_highlight": "Grow Successfully",
+    "hero_description": "Join 10,000+ growers getting premium genetics, professional equipment, and expert guidance delivered monthly",
+    "box": {
+      "name": "Premium Growing Box",
+      "description": "Everything you need for successful cannabis cultivation - from premium genetics to professional equipment and expert guidance",
+      "value": "€60-80",
+      "items": "6-8 premium items",
+      "box_value": "Box Value",
+      "premium_items": "Premium Items",
+      "whats_inside": "What's Inside:",
+      "contents": [
+        "Premium cannabis genetics & seeds",
+        "Professional growing equipment",
+        "Nutrient samples & boosters",
+        "Growing guides & tutorials",
+        "Exclusive strain information",
+        "Monthly growing tips"
+      ]
+    },
+    "plans": {
+      "title": "Choose Your Plan",
+      "description": "Save more with longer commitments",
+      "monthly": "Monthly",
+      "quarterly": "3 Months",
+      "annual": "12 Months",
+      "most_popular": "Most Popular",
+      "save": "Save",
+      "billed": "Billed",
+      "every": "every",
+      "months": "months",
+      "selected_plan": "Selected Plan",
+      "choose_plan": "Choose Plan",
+      "features": {
+        "monthly": [
+          "Premium monthly box",
+          "Free shipping",
+          "Cancel anytime"
+        ],
+        "quarterly": [
+          "Save 9% vs monthly",
+          "Premium monthly box",
+          "Free shipping",
+          "Priority support"
+        ],
+        "annual": [
+          "Save 17% vs monthly",
+          "Premium monthly box",
+          "Free shipping",
+          "Exclusive products",
+          "Birthday surprise"
+        ]
+      }
+    },
+    "one_time": {
+      "title": "Try Before You Subscribe",
+      "description": "Want to experience our Premium Growing Box first? Order a single box without commitment.",
+      "price": "€49.99",
+      "label": "One-time",
+      "button": "Try Once"
+    },
+    "benefits": {
+      "title": "Why Subscribe?",
+      "description": "Join thousands of successful growers who trust our curated selection and expert guidance",
+      "curated_products": {
+        "title": "Curated Premium Products",
+        "description": "Hand-selected items worth €60-80 for just €34.99. Each box contains 6-8 premium growing essentials."
+      },
+      "free_shipping": {
+        "title": "Free Express Shipping",
+        "description": "Fast, discreet delivery straight to your door. No shipping costs, ever."
+      },
+      "exclusive_access": {
+        "title": "Exclusive Access",
+        "description": "Get first access to new genetics, limited edition products, and subscriber-only items."
+      },
+      "expert_curation": {
+        "title": "Expert Curation",
+        "description": "Every product is tested and approved by our growing experts to ensure premium quality."
+      },
+      "growing_community": {
+        "title": "Growing Community",
+        "description": "Join 10,000+ growers in our private community with tips, guides, and support."
+      },
+      "quality_guarantee": {
+        "title": "Quality Guarantee",
+        "description": "Not satisfied? We'll make it right with our 100% satisfaction guarantee."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Everything you need to know about our Premium Growing Box subscription",
+      "questions": [
+        {
+          "question": "What's included in each monthly box?",
+          "answer": "Each Premium Growing Box contains 6-8 carefully curated items worth €60-80, including premium genetics, growing equipment, nutrients, tools, and exclusive products. Every box is different to keep your growing journey exciting and educational."
+        },
+        {
+          "question": "When will I be charged and receive my box?",
+          "answer": "You'll be charged immediately upon signup, and your first box ships within 2-3 business days. Subsequent boxes ship around the same date each month. You'll receive tracking information via email."
+        },
+        {
+          "question": "Can I pause or cancel my subscription?",
+          "answer": "Absolutely! You can pause or cancel your subscription anytime from your account dashboard or by contacting our support team. No cancellation fees or hidden charges."
+        },
+        {
+          "question": "Do you ship internationally?",
+          "answer": "Currently we ship to all EU countries with free express shipping. We're working on expanding to more regions. Check our shipping page for the most up-to-date information."
+        },
+        {
+          "question": "What if I don't like something in my box?",
+          "answer": "We stand behind our curation with a 100% satisfaction guarantee. If you're not happy with any item, contact us within 30 days and we'll make it right with a replacement or credit."
+        },
+        {
+          "question": "Are the genetics legal?",
+          "answer": "All products in our boxes comply with EU regulations. We only include legal genetics and growing supplies. Always check your local laws before germinating any seeds."
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest news about new products, exclusive deals, and wellness tips",
+    "email_placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "thank_you": "Thank You!",
+    "success_message": "You've successfully subscribed to our newsletter. Welcome to the community!",
+    "privacy_notice": "By subscribing, you agree to our privacy policy and terms of service."
+  },
+  "footer": {
+    "description": "Your trusted partner for premium cannabis products and wellness solutions."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "try_again": "Try Again",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search_placeholder": "Search...",
+    "no_results": "No results found",
+    "show_more": "Show More",
+    "show_less": "Show Less"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "checkout": "Checkout",
+    "continue_shopping": "Continue Shopping",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "update": "Update"
+  },
+  "account": {
+    "title": "My Account",
+    "profile": "Profile",
+    "orders": "Orders",
+    "addresses": "Addresses",
+    "wishlist": "Wishlist",
+    "settings": "Settings",
+    "logout": "Logout"
+  }
+} 

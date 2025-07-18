@@ -1,0 +1,305 @@
+{
+  "navigation": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "collections": "Kollektionen",
+    "about": "Über uns",
+    "account": "Konto",
+    "cart": "Warenkorb",
+    "search": "Suchen",
+    "menu": "Menü"
+  },
+  "hero": {
+    "premium_experience": {
+      "title": "Premium Cannabis Erlebnis",
+      "subtitle": "Entdecke Wellness durch die Natur",
+      "description": "Erkunde unsere kuratierte Auswahl an hochwertigen Cannabis-Produkten, sorgfältig ausgewählt für Qualität und Potenz.",
+      "cta": "Jetzt Shoppen"
+    },
+    "natural_growing": {
+      "title": "Natürliche Anbau-Lösungen",
+      "subtitle": "Vom Samen bis zur Ernte",
+      "description": "Alles was du für einen erfolgreichen Anbau brauchst - von hochwertigen Samen bis zur professionellen Ausrüstung.",
+      "cta": "Samen Entdecken"
+    },
+    "lifestyle_wellness": {
+      "title": "Lifestyle & Wellness",
+      "subtitle": "Verbessere deine tägliche Routine",
+      "description": "Hochwertige Accessoires und Wellness-Produkte für den modernen Cannabis-Enthusiasten.",
+      "cta": "Lifestyle Shoppen"
+    },
+    "features": {
+      "premium_quality": {
+        "title": "Premium Qualität",
+        "description": "Sorgfältig kuratierte Produkte"
+      },
+      "lab_tested": {
+        "title": "Labor Getestet",
+        "description": "Von Dritten verifiziert"
+      },
+      "discreet_shipping": {
+        "title": "Diskreter Versand",
+        "description": "Schnelle & sichere Lieferung"
+      }
+    }
+  },
+  "categories": {
+    "title": "Nach Kategorie Shoppen",
+    "description": "Entdecke unsere sorgfältig kuratierte Auswahl an hochwertigen Cannabis-Produkten und Accessoires",
+    "cbd_products": {
+      "title": "CBD Produkte",
+      "description": "Premium CBD Öle, Gummis & Wellness"
+    },
+    "cannabis_seeds": {
+      "title": "Cannabis Samen",
+      "description": "Premium Genetik & Sorten"
+    },
+    "glass_bongs": {
+      "title": "Glas & Bongs",
+      "description": "Hochwertige Glaswaren"
+    },
+    "accessories": {
+      "title": "Zubehör",
+      "description": "Grinder, Papers & Werkzeuge"
+    }
+  },
+  "products": {
+    "featured_title": "Ausgewählte Produkte",
+    "featured_description": "Entdecke unsere beliebtesten Artikel",
+    "view_all": "Alle Produkte Anzeigen",
+    "add_to_cart": "In den Warenkorb",
+    "quick_view": "Schnellansicht",
+    "out_of_stock": "Ausverkauft",
+    "sale": "Sale",
+    "new": "Neu"
+  },
+  "collections": {
+    "title": "Kuratierte Kollektionen",
+    "description": "Durchdacht ausgewählte Produkte für jeden Lifestyle",
+    "wellness_collection": {
+      "title": "Wellness Kollektion",
+      "description": "Premium CBD Produkte für deine tägliche Wellness-Routine"
+    },
+    "natural_living": {
+      "title": "Natürliches Leben",
+      "description": "Organische und natürliche Produkte für einen gesünderen Lifestyle"
+    },
+    "explore_collection": "Kollektion Entdecken"
+  },
+  "about": {
+    "title": "Dein vertrauensvoller Partner im",
+    "title_highlight": "Cannabis Wellness",
+    "description_1": "Wir sind leidenschaftlich dabei, hochwertige Cannabis-Produkte anzubieten, die deine Wellness-Reise verbessern. Unsere sorgfältig kuratierte Auswahl umfasst die besten CBD-Produkte, Premium-Samen und hochwertige Accessoires.",
+    "description_2": "Jedes Produkt wird im Labor auf Qualität und Potenz getestet, um sicherzustellen, dass du nur das Beste erhältst. Wir glauben an Transparenz, Bildung und die Unterstützung der Wellness-Ziele unserer Community.",
+    "stats": {
+      "customers": "Zufriedene Kunden",
+      "experience": "Jahre Erfahrung",
+      "products": "Premium Produkte",
+      "countries": "Länder Beliefert"
+    },
+    "learn_more": "Mehr Erfahren",
+    "shop_products": "Produkte Shoppen"
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "description": "Schließe dich tausenden zufriedener Kunden an, die uns für ihre Cannabis-Wellness-Bedürfnisse vertrauen",
+    "testimonial_1": {
+      "text": "Erstaunliche Qualität bei CBD-Produkten! Das Öl hat mir wirklich bei meinem Schlaf und meiner Angst geholfen. Schneller Versand und diskrete Verpackung.",
+      "name": "Sarah M.",
+      "location": "Berlin, Deutschland",
+      "product": "CBD Öl 15%"
+    },
+    "testimonial_2": {
+      "text": "Die beste Samen-Bank, die ich gefunden habe. Ausgezeichnete Keimungsraten und der Kundenservice ist erstklassig. Sehr empfehlenswert!",
+      "name": "Marcus K.",
+      "location": "Amsterdam, Niederlande",
+      "product": "Premium Samen"
+    },
+    "testimonial_3": {
+      "text": "Die Glaswaren sind schön und funktional. Tolle Qualität zu fairen Preisen. Werde definitiv wieder bestellen.",
+      "name": "Elena R.",
+      "location": "Barcelona, Spanien",
+      "product": "Glas Kollektion"
+    },
+    "verified_purchase": "Verifizierter Kauf"
+  },
+  "deals": {
+    "title": "Spezielle Angebote",
+    "description": "Verpasse nicht diese fantastischen Angebote",
+    "limited_time": "Begrenzte Zeit",
+    "view_all_deals": "Alle Angebote Anzeigen"
+  },
+  "subscription": {
+    "badge": "Premium Abonnement",
+    "hero_title": "Alles was du brauchst um",
+    "hero_title_highlight": "Erfolgreich zu Züchten",
+    "hero_description": "Schließe dich 10.000+ Züchtern an, die monatlich Premium-Genetik, professionelle Ausrüstung und Expertenwissen erhalten",
+    "box": {
+      "name": "Premium Growing Box",
+      "description": "Alles was du für einen erfolgreichen Cannabis-Anbau brauchst - von Premium-Genetik bis zur professionellen Ausrüstung und Expertenberatung",
+      "value": "€60-80",
+      "items": "6-8 Premium Artikel",
+      "box_value": "Box Wert",
+      "premium_items": "Premium Artikel",
+      "whats_inside": "Was ist drin:",
+      "contents": [
+        "Premium Cannabis Genetik & Samen",
+        "Professionelle Anbau-Ausrüstung",
+        "Nährstoff-Proben & Booster",
+        "Anbau-Anleitungen & Tutorials",
+        "Exklusive Sorten-Informationen",
+        "Monatliche Anbau-Tipps"
+      ]
+    },
+    "plans": {
+      "title": "Wähle deinen Plan",
+      "description": "Spare mehr mit längeren Verpflichtungen",
+      "monthly": "Monatlich",
+      "quarterly": "3 Monate",
+      "annual": "12 Monate",
+      "most_popular": "Beliebtester",
+      "save": "Spare",
+      "billed": "Abgerechnet",
+      "every": "alle",
+      "months": "Monate",
+      "selected_plan": "Ausgewählter Plan",
+      "choose_plan": "Plan Wählen",
+      "features": {
+        "monthly": [
+          "Premium monatliche Box",
+          "Kostenloser Versand",
+          "Jederzeit kündbar"
+        ],
+        "quarterly": [
+          "9% Ersparnis vs. monatlich",
+          "Premium monatliche Box", 
+          "Kostenloser Versand",
+          "Prioritäts-Support"
+        ],
+        "annual": [
+          "17% Ersparnis vs. monatlich",
+          "Premium monatliche Box",
+          "Kostenloser Versand",
+          "Exklusive Produkte",
+          "Geburtstags-Überraschung"
+        ]
+      }
+    },
+    "one_time": {
+      "title": "Vor dem Abonnieren Testen",
+      "description": "Möchtest du unsere Premium Growing Box zuerst erleben? Bestelle eine einzelne Box ohne Verpflichtung.",
+      "price": "€49.99",
+      "label": "Einmalig",
+      "button": "Einmal Probieren"
+    },
+    "benefits": {
+      "title": "Warum Abonnieren?",
+      "description": "Schließe dich tausenden erfolgreicher Züchter an, die unserer kuratierten Auswahl und Expertenberatung vertrauen",
+      "curated_products": {
+        "title": "Kuratierte Premium Produkte",
+        "description": "Handverlesene Artikel im Wert von €60-80 für nur €34.99. Jede Box enthält 6-8 Premium Anbau-Essentials."
+      },
+      "free_shipping": {
+        "title": "Kostenloser Express-Versand",
+        "description": "Schnelle, diskrete Lieferung direkt vor deine Tür. Keine Versandkosten, niemals."
+      },
+      "exclusive_access": {
+        "title": "Exklusiver Zugang",
+        "description": "Erhalte als erstes Zugang zu neuer Genetik, limitierten Editionen und nur für Abonnenten erhältlichen Artikeln."
+      },
+      "expert_curation": {
+        "title": "Experten-Kuration",
+        "description": "Jedes Produkt wird von unseren Anbau-Experten getestet und genehmigt, um Premium-Qualität zu gewährleisten."
+      },
+      "growing_community": {
+        "title": "Anbau-Community",
+        "description": "Tritt unserer privaten Community mit 10.000+ Züchtern bei mit Tipps, Anleitungen und Support."
+      },
+      "quality_guarantee": {
+        "title": "Qualitäts-Garantie",
+        "description": "Nicht zufrieden? Wir machen es mit unserer 100% Zufriedenheits-Garantie wieder gut."
+      }
+    },
+    "faq": {
+      "title": "Häufig Gestellte Fragen",
+      "description": "Alles was du über unser Premium Growing Box Abonnement wissen musst",
+      "questions": [
+        {
+          "question": "Was ist in jeder monatlichen Box enthalten?",
+          "answer": "Jede Premium Growing Box enthält 6-8 sorgfältig kuratierte Artikel im Wert von €60-80, einschließlich Premium-Genetik, Anbau-Ausrüstung, Nährstoffe, Werkzeuge und exklusive Produkte. Jede Box ist anders, um deine Anbau-Reise spannend und lehrreich zu halten."
+        },
+        {
+          "question": "Wann werde ich belastet und erhalte meine Box?",
+          "answer": "Du wirst sofort nach der Anmeldung belastet, und deine erste Box wird innerhalb von 2-3 Werktagen versendet. Nachfolgende Boxen werden ungefähr am gleichen Datum jeden Monat versendet. Du erhältst Tracking-Informationen per E-Mail."
+        },
+        {
+          "question": "Kann ich mein Abonnement pausieren oder kündigen?",
+          "answer": "Absolut! Du kannst dein Abonnement jederzeit über dein Konto-Dashboard pausieren oder kündigen oder unser Support-Team kontaktieren. Keine Kündigungsgebühren oder versteckten Kosten."
+        },
+        {
+          "question": "Liefert ihr international?",
+          "answer": "Derzeit liefern wir in alle EU-Länder mit kostenlosem Express-Versand. Wir arbeiten daran, in mehr Regionen zu expandieren. Überprüfe unsere Versandseite für die aktuellsten Informationen."
+        },
+        {
+          "question": "Was ist, wenn mir etwas in meiner Box nicht gefällt?",
+          "answer": "Wir stehen hinter unserer Kuration mit einer 100% Zufriedenheits-Garantie. Wenn du mit einem Artikel nicht zufrieden bist, kontaktiere uns innerhalb von 30 Tagen und wir machen es mit einem Ersatz oder Guthaben wieder gut."
+        },
+        {
+          "question": "Ist die Genetik legal?",
+          "answer": "Alle Produkte in unseren Boxen entsprechen den EU-Vorschriften. Wir schließen nur legale Genetik und Anbau-Zubehör ein. Überprüfe immer deine lokalen Gesetze vor dem Keimen von Samen."
+        }
+      ]
+    }
+  },
+  "newsletter": {
+    "title": "Bleib auf dem Laufenden",
+    "description": "Erhalte die neuesten Nachrichten über neue Produkte, exklusive Angebote und Wellness-Tipps",
+    "email_placeholder": "Gib deine E-Mail ein",
+    "subscribe": "Abonnieren",
+    "subscribing": "Abonniere...",
+    "thank_you": "Danke!",
+    "success_message": "Du hast erfolgreich unseren Newsletter abonniert. Willkommen in der Community!",
+    "privacy_notice": "Durch das Abonnieren stimmst du unserer Datenschutzrichtlinie und den Nutzungsbedingungen zu."
+  },
+  "footer": {
+    "description": "Dein vertrauensvoller Partner für Premium Cannabis-Produkte und Wellness-Lösungen."
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "try_again": "Erneut Versuchen",
+    "close": "Schließen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "search_placeholder": "Suchen...",
+    "no_results": "Keine Ergebnisse gefunden",
+    "show_more": "Mehr Anzeigen",
+    "show_less": "Weniger Anzeigen"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer",
+    "subtotal": "Zwischensumme",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "continue_shopping": "Weiter Shoppen",
+    "remove": "Entfernen",
+    "quantity": "Menge",
+    "update": "Aktualisieren"
+  },
+  "account": {
+    "title": "Mein Konto",
+    "profile": "Profil",
+    "orders": "Bestellungen",
+    "addresses": "Adressen",
+    "wishlist": "Wunschliste",
+    "settings": "Einstellungen",
+    "logout": "Abmelden"
+  }
+} 

@@ -5,69 +5,69 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Leaf, Shield, Truck } from "lucide-react"
-
-const banners = [
-  {
-    id: 1,
-    title: "Premium Cannabis Experience",
-    subtitle: "Discover wellness through nature",
-    description:
-      "Explore our curated selection of premium cannabis products, carefully sourced for quality and potency.",
-    image: "/images/hero-banner.png",
-    cta: "Shop Now",
-    ctaLink: "/collections/all",
-    theme: "wellness",
-  },
-  {
-    id: 2,
-    title: "Natural Growing Solutions",
-    subtitle: "From seed to harvest",
-    description:
-      "Everything you need for successful cultivation, from premium seeds to professional growing equipment.",
-    image: "/images/natural-growing.png",
-    cta: "Explore Seeds",
-    ctaLink: "/collections/seeds",
-    theme: "growing",
-  },
-  {
-    id: 3,
-    title: "Lifestyle & Wellness",
-    subtitle: "Elevate your daily routine",
-    description: "Premium accessories and wellness products designed for the modern cannabis enthusiast.",
-    image: "/images/wellness-lifestyle.png",
-    cta: "Shop Lifestyle",
-    ctaLink: "/collections/accessories",
-    theme: "lifestyle",
-  },
-]
-
-const features = [
-  {
-    icon: Leaf,
-    title: "Premium Quality",
-    description: "Carefully curated products",
-  },
-  {
-    icon: Shield,
-    title: "Lab Tested",
-    description: "Third-party verified",
-  },
-  {
-    icon: Truck,
-    title: "Discreet Shipping",
-    description: "Fast & secure delivery",
-  },
-]
+import { useTranslations } from 'next-intl'
 
 export function HeroBanners() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const t = useTranslations('hero')
+
+  const banners = [
+    {
+      id: 1,
+      title: t('premium_experience.title'),
+      subtitle: t('premium_experience.subtitle'),
+      description: t('premium_experience.description'),
+      image: "/images/hero-banner.png",
+      cta: t('premium_experience.cta'),
+      ctaLink: "/collections/all",
+      theme: "wellness",
+    },
+    {
+      id: 2,
+      title: t('natural_growing.title'),
+      subtitle: t('natural_growing.subtitle'),
+      description: t('natural_growing.description'),
+      image: "/images/natural-growing.png",
+      cta: t('natural_growing.cta'),
+      ctaLink: "/collections/seeds",
+      theme: "growing",
+    },
+    {
+      id: 3,
+      title: t('lifestyle_wellness.title'),
+      subtitle: t('lifestyle_wellness.subtitle'),
+      description: t('lifestyle_wellness.description'),
+      image: "/images/wellness-lifestyle.png",
+      cta: t('lifestyle_wellness.cta'),
+      ctaLink: "/collections/accessories",
+      theme: "lifestyle",
+    },
+  ]
+
+  const features = [
+    {
+      icon: Leaf,
+      title: t('features.premium_quality.title'),
+      description: t('features.premium_quality.description'),
+    },
+    {
+      icon: Shield,
+      title: t('features.lab_tested.title'),
+      description: t('features.lab_tested.description'),
+    },
+    {
+      icon: Truck,
+      title: t('features.discreet_shipping.title'),
+      description: t('features.discreet_shipping.description'),
+    },
+  ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % banners.length)
     }, 6000)
     return () => clearInterval(timer)
-  }, [])
+  }, [banners.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % banners.length)

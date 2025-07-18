@@ -1,25 +1,26 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-
-const inter = Inter({ subsets: ["latin"] })
+import type { Metadata } from "next";
+import { locales } from "../i18n";
 
 export const metadata: Metadata = {
-  title: "GrowHigh - Your Trusted Partner in Cannabis Growing",
-  description: "Premium cannabis genetics, professional growing equipment, and expert cultivation support. Join 25,000+ successful growers with 98% success rate. Quality seeds, nutrients, lighting & more.",
-  keywords: "cannabis seeds, growing equipment, cultivation supplies, cannabis genetics, grow lights, nutrients, hydroponic systems, organic fertilizers, cultivation guides",
-  generator: 'v0.dev'
+  title: "GrowHigh - Ihr vertrauensvoller Partner im Cannabis-Anbau",
+  description: "Premium Cannabis-Genetik, professionelle Anbau-Ausrüstung und Experten-Unterstützung. Schließen Sie sich 25.000+ erfolgreichen Züchtern mit 98% Erfolgsrate an.",
+  keywords: "Cannabis Samen, Anbau-Ausrüstung, Kultivierungs-Zubehör, Cannabis-Genetik, Grow-Lights, Nährstoffe, Hydroponik-Systeme, organische Düngemittel, Anbau-Anleitungen",
+};
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
 
 export default function RootLayout({
   children,
+  params: { locale }
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang={locale}>
+      <body>{children}</body>
     </html>
-  )
-}
-
+  );
+} 
