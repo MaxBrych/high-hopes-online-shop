@@ -1,6 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { shopifyFetch } from "@/lib/shopify-server"
 
+export const runtime = 'nodejs'
+export const dynamic = 'force-dynamic'
+
 const CREATE_CART_MUTATION = `
   mutation cartCreate($input: CartInput!) {
     cartCreate(input: $input) {
