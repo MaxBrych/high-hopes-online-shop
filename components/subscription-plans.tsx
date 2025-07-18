@@ -253,11 +253,11 @@ export function SubscriptionPlans() {
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+              </CardContent>
+            </Card>
+      </div>
 
-        {/* Subscription Plans */}
+      {/* Subscription Plans */}
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-medium text-brand-dark mb-4">Choose Your Plan</h3>
@@ -265,7 +265,7 @@ export function SubscriptionPlans() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {plans.map((plan) => (
+          {plans.map((plan) => (
               <Card 
                 key={plan.id} 
                 className={`relative cursor-pointer transition-all hover:shadow-lg ${
@@ -273,19 +273,19 @@ export function SubscriptionPlans() {
                 } ${selectedPlan?.id === plan.id ? "ring-2 ring-brand-green" : ""}`}
                 onClick={() => setSelectedPlan(plan)}
               >
-                {plan.popular && (
+              {plan.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-brand-green text-white">
-                    Most Popular
-                  </Badge>
-                )}
+                  Most Popular
+                </Badge>
+              )}
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-xl text-brand-dark">{plan.name}</CardTitle>
                   <div className="space-y-2">
                     <div className="flex items-baseline justify-center">
                       <span className="text-3xl font-bold text-brand-dark">€{plan.price}</span>
                       <span className="text-brand-dark/60 ml-1">/month</span>
-                    </div>
-                    {plan.savingsPercentage > 0 && (
+                </div>
+                {plan.savingsPercentage > 0 && (
                       <div className="text-sm text-brand-green font-medium">
                         Save €{plan.savings} ({plan.savingsPercentage}%)
                       </div>
@@ -299,13 +299,13 @@ export function SubscriptionPlans() {
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ul className="space-y-3 mb-6">
-                    {plan.features.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                  {plan.features.map((feature, index) => (
+                    <li key={index} className="flex items-start">
                         <Check className="w-4 h-4 text-brand-green mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-brand-dark/70">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    </li>
+                  ))}
+                </ul>
                   <Button 
                     className={`w-full font-normal ${
                       plan.popular 
@@ -318,52 +318,52 @@ export function SubscriptionPlans() {
                     }}
                   >
                     {selectedPlan?.id === plan.id ? "Selected Plan" : "Choose Plan"}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+      </div>
 
-          {/* One-time purchase option */}
+      {/* One-time purchase option */}
           <div className="mt-8 max-w-2xl mx-auto">
             <Card className="border-brand-dark/10">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div>
+          <div>
                     <h4 className="font-medium text-brand-dark mb-2">Try Before You Subscribe</h4>
                     <p className="text-brand-dark/70 text-sm">
                       Want to experience our Premium Growing Box first? Order a single box without commitment.
-                    </p>
-                  </div>
-                  <div className="flex items-center space-x-4">
+            </p>
+          </div>
+          <div className="flex items-center space-x-4">
                     <div className="text-center">
                       <div className="text-2xl font-bold text-brand-dark">€49.99</div>
                       <div className="text-xs text-brand-dark/60">One-time</div>
                     </div>
-                    <Button
-                      variant="outline"
+            <Button
+              variant="outline"
                       className="border-brand-green text-brand-green hover:bg-brand-green hover:text-white"
-                      onClick={handleOneTimePurchase}
-                      disabled={isProcessing}
-                    >
-                      {isProcessing ? (
-                        <span className="flex items-center">
+              onClick={handleOneTimePurchase}
+              disabled={isProcessing}
+            >
+              {isProcessing ? (
+                <span className="flex items-center">
                           <span className="animate-spin h-4 w-4 mr-2 border-2 border-brand-green border-t-transparent rounded-full"></span>
-                          Processing...
-                        </span>
-                      ) : (
-                        <span className="flex items-center">
-                          <ShoppingCart className="mr-2 h-4 w-4" />
+                  Processing...
+                </span>
+              ) : (
+                <span className="flex items-center">
+                  <ShoppingCart className="mr-2 h-4 w-4" />
                           Try Once
-                        </span>
-                      )}
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </span>
+              )}
+            </Button>
           </div>
         </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
 
         {/* Benefits Section */}
         <div className="mb-16">
@@ -383,8 +383,8 @@ export function SubscriptionPlans() {
                   </div>
                   <h4 className="font-medium text-brand-dark mb-3">{benefit.title}</h4>
                   <p className="text-brand-dark/70 text-sm font-light leading-relaxed">{benefit.description}</p>
-                </CardContent>
-              </Card>
+            </CardContent>
+          </Card>
             ))}
           </div>
         </div>
@@ -414,16 +414,16 @@ export function SubscriptionPlans() {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-
-        {/* Subscription Modal */}
-        <SubscriptionModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          plan={selectedPlan}
-          selectedBox={premiumBox}
-        />
       </div>
+
+      {/* Subscription Modal */}
+      <SubscriptionModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        plan={selectedPlan}
+          selectedBox={premiumBox}
+      />
+    </div>
     </section>
   )
 }
