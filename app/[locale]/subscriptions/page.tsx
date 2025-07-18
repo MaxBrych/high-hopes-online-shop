@@ -4,33 +4,33 @@ import { Footer } from "@/components/footer"
 import { SubscriptionPlans } from "@/components/subscription-plans"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
+// Prevent static generation for this page
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: "CBD Monatsbox Abonnement | High Hopes",
   description:
     "Abonniere unsere monatliche CBD Box mit Premium-Produkten und spare bis zu 13%. Jetzt mit flexiblen Laufzeiten verfügbar.",
 }
 
-export default function SubscriptionsPage() {
+export default function SubscriptionsPage({
+  params: { locale }
+}: {
+  params: { locale: string }
+}) {
   const breadcrumbs = [
-    { label: "Startseite", href: "/" },
-    { label: "Abonnements", href: "/subscriptions" },
+    { label: "Startseite", href: locale === 'de' ? "/" : "/en" },
+    { label: "Abonnements", href: locale === 'de' ? "/subscriptions" : "/en/subscriptions" },
   ]
 
   return (
     <div className="min-h-screen bg-gray-50">
       <PromoBar />
       <Header />
-
-      <div className="container mx-auto px-4 py-4 md:py-8">
+      
+      <div className="container mx-auto px-4 py-8 md:py-16">
         <Breadcrumbs items={breadcrumbs} />
-
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">CBD Monatsbox Abonnement</h1>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-            Erhalte jeden Monat eine kuratierte Auswahl unserer besten CBD-Produkte und Zubehör direkt zu dir nach
-            Hause. Spare mit längeren Laufzeiten und genieße exklusive Vorteile für Abonnenten.
-          </p>
-
+        <div className="space-y-16">
           <SubscriptionPlans />
         </div>
       </div>
