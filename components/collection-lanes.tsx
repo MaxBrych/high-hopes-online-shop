@@ -3,7 +3,6 @@
 import { ProductCardLane } from "@/components/product-card-lane"
 import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Badge } from "@/components/ui/badge"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { useRef } from "react"
@@ -74,17 +73,9 @@ function CollectionLane({ collection }: { collection: Collection }) {
       {/* Collection Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
-            <h3 className="text-2xl md:text-3xl font-light text-black">
-              {collection.title}
-            </h3>
-            <Badge 
-              variant="outline" 
-              className="bg-white text-black/70 border-black/20 font-normal"
-            >
-              {collection.products.length} products
-            </Badge>
-          </div>
+          <h3 className="text-2xl md:text-3xl font-light text-black">
+            {collection.title}
+          </h3>
           {collection.description && (
             <p className="text-black/70 font-light max-w-lg">
               {collection.description}
@@ -94,10 +85,12 @@ function CollectionLane({ collection }: { collection: Collection }) {
         
         <Link href={`/collections/${collection.handle}`}>
           <Button 
-            className="bg-brand-green hover:bg-brand-green-dark text-white border-0 px-6 py-2 h-auto rounded-full font-normal group transition-all duration-300"
+            variant="outline"
+            size="sm"
+            className="bg-white text-black border-black/20 hover:bg-gray-50 px-4 py-2 h-auto text-sm font-normal"
           >
             View All
-            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3 h-3 ml-2" />
           </Button>
         </Link>
       </div>

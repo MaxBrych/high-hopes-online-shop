@@ -86,54 +86,54 @@ export function ProductInfo({ product }: ProductInfoProps) {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 md:space-y-8">
       {/* Product Title and Rating */}
-      <div className="space-y-4">
-        <div className="flex items-center gap-2 mb-3">
+      <div className="space-y-3 md:space-y-4">
+        <div className="flex flex-wrap items-center gap-2 mb-3">
           {product.vendor && (
-            <Badge variant="outline" className="border-primary/30 text-primary bg-primary/5 font-normal">
+            <Badge variant="outline" className="border-black/20 text-black/70 bg-white font-normal text-xs">
               {product.vendor}
             </Badge>
           )}
           {product.productType && (
-            <Badge variant="outline" className="border-brand-dark/20 text-brand-dark/70 bg-brand-light/50 font-normal">
+            <Badge variant="outline" className="border-black/20 text-black/70 bg-white font-normal text-xs">
               {product.productType}
             </Badge>
           )}
-          {discount && <Badge className="bg-red-500 text-white font-normal">-{discount}%</Badge>}
+          {discount && <Badge className="bg-white border border-black/20 text-black font-normal text-xs">-{discount}%</Badge>}
         </div>
 
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium text-brand-dark leading-tight">{product.title}</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-light text-black leading-tight">{product.title}</h1>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
             ))}
           </div>
-          <span className="text-sm text-brand-dark/60 font-light">(4.8) • 127 reviews</span>
+          <span className="text-sm text-black/60 font-light">(4.8) • 127 reviews</span>
         </div>
       </div>
 
       {/* Price */}
       <div className="space-y-2">
-        <div className="flex items-baseline gap-3">
-          <span className="text-3xl md:text-4xl font-medium text-primary">€{selectedVariant.price.toFixed(2)}</span>
+        <div className="flex flex-wrap items-baseline gap-3">
+          <span className="text-2xl md:text-3xl font-medium text-brand-green">€{selectedVariant.price.toFixed(2)}</span>
           {selectedVariant.compareAtPrice && selectedVariant.compareAtPrice > selectedVariant.price && (
-            <span className="text-xl text-brand-dark/50 line-through font-light">
+            <span className="text-lg md:text-xl text-black/50 line-through font-light">
               €{selectedVariant.compareAtPrice.toFixed(2)}
             </span>
           )}
         </div>
-        <p className="text-sm text-brand-dark/60 font-light">Tax included. Shipping calculated at checkout.</p>
+        <p className="text-sm text-black/60 font-light">Tax included. Shipping calculated at checkout.</p>
       </div>
 
       {/* Stock Status */}
       <div className="flex items-center gap-2">
         {isInStock ? (
           <>
-            <div className="w-2 h-2 bg-primary rounded-full"></div>
-            <span className="text-primary font-medium text-sm">
+            <div className="w-2 h-2 bg-brand-green rounded-full"></div>
+            <span className="text-brand-green font-medium text-sm">
               In Stock {stockLevel > 0 && stockLevel <= 10 && `(${stockLevel} left)`}
             </span>
           </>
@@ -148,7 +148,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
       {/* Product Options */}
       {product.options.map((option) => (
         <div key={option.name} className="space-y-3">
-          <h3 className="font-medium text-brand-dark">{option.name}</h3>
+          <h3 className="font-medium text-black text-sm md:text-base">{option.name}</h3>
           <div className="flex flex-wrap gap-2">
             {option.values.map((value) => (
               <Button
@@ -158,8 +158,8 @@ export function ProductInfo({ product }: ProductInfoProps) {
                 onClick={() => handleOptionChange(option.name, value)}
                 className={
                   selectedOptions[option.name] === value
-                    ? "bg-primary hover:bg-primary/90 text-white font-normal"
-                    : "border-brand-dark/20 text-brand-dark hover:border-primary hover:text-primary font-normal"
+                    ? "bg-brand-green hover:bg-brand-green-dark text-white font-normal"
+                    : "border-black/20 text-black hover:border-brand-green hover:text-brand-green font-normal bg-white"
                 }
               >
                 {value}
@@ -171,14 +171,14 @@ export function ProductInfo({ product }: ProductInfoProps) {
 
       {/* Quantity Selector */}
       <div className="space-y-3">
-        <h3 className="font-medium text-brand-dark">Quantity</h3>
-        <div className="flex items-center border border-brand-dark/20 rounded-lg w-fit bg-white">
+        <h3 className="font-medium text-black text-sm md:text-base">Quantity</h3>
+        <div className="flex items-center border border-black/20 rounded-lg w-fit bg-white">
           <Button
             variant="ghost"
             size="sm"
             onClick={() => setQuantity(Math.max(1, quantity - 1))}
             disabled={quantity <= 1}
-            className="px-3 hover:bg-brand-light text-brand-dark"
+            className="px-3 hover:bg-gray-50 text-black"
           >
             <Minus className="w-4 h-4" />
           </Button>
@@ -188,7 +188,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
             size="sm"
             onClick={() => setQuantity(quantity + 1)}
             disabled={quantity >= stockLevel}
-            className="px-3 hover:bg-brand-light text-brand-dark"
+            className="px-3 hover:bg-gray-50 text-black"
           >
             <Plus className="w-4 h-4" />
           </Button>
@@ -200,19 +200,25 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <div className="flex gap-3">
           <Button
             size="lg"
-            className="flex-1 bg-primary hover:bg-primary/90 text-white h-12 text-base font-medium transition-all duration-200"
+            className="flex-1 bg-brand-green hover:bg-brand-green-dark text-white h-12 text-sm md:text-base font-medium transition-all duration-200"
             disabled={!isInStock}
             onClick={handleAddToCart}
           >
             {isAddedToCart ? (
               <>
                 <Check className="w-5 h-5 mr-2" />
-                Added to Cart!
+                <span className="hidden sm:inline">Added to Cart!</span>
+                <span className="sm:hidden">Added!</span>
               </>
             ) : (
               <>
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {isInStock ? `Add to Cart - €${(selectedVariant.price * quantity).toFixed(2)}` : "Out of Stock"}
+                <span className="hidden sm:inline">
+                  {isInStock ? `Add to Cart - €${(selectedVariant.price * quantity).toFixed(2)}` : "Out of Stock"}
+                </span>
+                <span className="sm:hidden">
+                  {isInStock ? `Add €${(selectedVariant.price * quantity).toFixed(2)}` : "Out of Stock"}
+                </span>
               </>
             )}
           </Button>
@@ -222,8 +228,8 @@ export function ProductInfo({ product }: ProductInfoProps) {
             onClick={() => setIsWishlisted(!isWishlisted)}
             className={`h-12 px-4 transition-all duration-200 ${
               isWishlisted
-                ? "text-red-500 border-red-500 bg-red-50 hover:bg-red-100"
-                : "border-brand-dark/20 hover:border-primary hover:text-primary"
+                ? "text-brand-green border-brand-green bg-brand-green/10 hover:bg-brand-green/20"
+                : "border-black/20 hover:border-brand-green hover:text-brand-green bg-white"
             }`}
           >
             <Heart className={`w-5 h-5 ${isWishlisted ? "fill-current" : ""}`} />
@@ -231,7 +237,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
           <Button
             size="lg"
             variant="outline"
-            className="h-12 px-4 border-brand-dark/20 hover:border-primary hover:text-primary transition-all duration-200 bg-transparent"
+            className="h-12 px-4 border-black/20 hover:border-brand-green hover:text-brand-green transition-all duration-200 bg-white"
           >
             <Share2 className="w-5 h-5" />
           </Button>
@@ -240,64 +246,37 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <Button
           variant="outline"
           size="lg"
-          className="w-full h-12 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 font-medium bg-transparent"
+          className="w-full h-12 border-black/20 text-black hover:bg-black hover:text-white transition-all duration-200"
+          disabled={!isInStock}
         >
-          Buy Now - Express Checkout
+          Buy it now
         </Button>
       </div>
 
       {/* Product Features */}
-      <Card className="border-brand-dark/10 bg-gradient-to-br from-white to-brand-light/30">
-        <CardContent className="p-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Truck className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-medium text-brand-dark">Free Shipping</p>
-                <p className="text-sm text-brand-dark/60 font-light">Orders over €50</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Shield className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-medium text-brand-dark">Lab Tested</p>
-                <p className="text-sm text-brand-dark/60 font-light">Quality guaranteed</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <RotateCcw className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-medium text-brand-dark">Easy Returns</p>
-                <p className="text-sm text-brand-dark/60 font-light">30-day policy</p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Product Tags */}
-      {product.tags.length > 0 && (
-        <div className="space-y-3">
-          <h3 className="font-medium text-brand-dark">Tags</h3>
-          <div className="flex flex-wrap gap-2">
-            {product.tags.slice(0, 8).map((tag) => (
-              <Badge
-                key={tag}
-                variant="secondary"
-                className="bg-brand-light text-brand-dark/70 hover:bg-primary/10 hover:text-primary transition-colors font-normal"
-              >
-                {tag}
-              </Badge>
-            ))}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-black/10">
+        <div className="flex items-center gap-3 text-sm">
+          <Truck className="w-5 h-5 text-brand-green flex-shrink-0" />
+          <div>
+            <div className="font-medium text-black">Free Shipping</div>
+            <div className="text-black/60 font-light">On orders over €50</div>
           </div>
         </div>
-      )}
+        <div className="flex items-center gap-3 text-sm">
+          <Shield className="w-5 h-5 text-brand-green flex-shrink-0" />
+          <div>
+            <div className="font-medium text-black">Secure Payment</div>
+            <div className="text-black/60 font-light">SSL encrypted</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 text-sm">
+          <RotateCcw className="w-5 h-5 text-brand-green flex-shrink-0" />
+          <div>
+            <div className="font-medium text-black">Easy Returns</div>
+            <div className="text-black/60 font-light">30-day policy</div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,9 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Leaf, Droplets, Glasses, Wrench, Sprout, Package, Zap, Beaker } from "lucide-react"
 
 interface Collection {
   id: string
@@ -19,6 +18,32 @@ interface Collection {
 interface CategoryNavProps {
   collections: Collection[]
 }
+
+// Map collection handles to appropriate icons
+const categoryIcons: Record<string, any> = {
+  seeds: Leaf,
+  'cannabis-seeds': Leaf,
+  'feminized-seeds': Leaf,
+  'autoflower-seeds': Sprout,
+  cbd: Droplets,
+  'cbd-products': Droplets,
+  glass: Glasses,
+  'glass-bongs': Glasses,
+  accessories: Wrench,
+  'smoking-accessories': Wrench,
+  equipment: Package,
+  'growing-equipment': Package,
+  'grow-equipment': Package,
+  nutrients: Beaker,
+  'nutrients-fertilizers': Beaker,
+  lights: Zap,
+  'grow-lights': Zap,
+  'led-lights': Zap,
+  // Add more mappings as needed
+}
+
+// Default icon if no match found
+const defaultIcon = Package
 
 export function CategoryNav({ collections = [] }: CategoryNavProps) {
   // Use first 4 collections from Shopify, or show fallback message
@@ -48,43 +73,36 @@ export function CategoryNav({ collections = [] }: CategoryNavProps) {
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {categoriesToShow.map((collection) => (
-            <Link
-              key={collection.id}
-              href={`/collections/${collection.handle}`}
-              className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
-            >
-              <div className="aspect-square relative overflow-hidden" style={{ backgroundColor: '#F4F1E0' }}>
-                {collection.image?.url ? (
-                  <Image
-                    src={collection.image.url}
-                    alt={collection.image.altText || collection.title}
-                    fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-black/40 text-sm font-light">No image</span>
+          {categoriesToShow.map((collection) => {
+            // Get the appropriate icon for this collection
+            const IconComponent = categoryIcons[collection.handle] || defaultIcon
+            
+            return (
+              <Link
+                key={collection.id}
+                href={`/collections/${collection.handle}`}
+                className="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:border-brand-green/20"
+              >
+                <div className="text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-green/20 transition-colors">
+                    <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-brand-green" />
                   </div>
-                )}
-              </div>
-              
-              <div className="p-4">
-                <h3 className="font-medium text-sm md:text-base text-black mb-1 group-hover:text-brand-green transition-colors">
-                  {collection.title}
-                </h3>
-                {collection.description && (
-                  <p className="text-xs md:text-sm text-black/60 font-light line-clamp-2">
-                    {collection.description}
-                  </p>
-                )}
-                <div className="flex items-center mt-2 text-brand-green group-hover:translate-x-1 transition-transform duration-300">
-                  <span className="text-xs font-normal">Shop Now</span>
-                  <ChevronRight className="w-3 h-3 ml-1" />
+                  <h3 className="font-medium text-sm md:text-base text-black mb-2 group-hover:text-brand-green transition-colors">
+                    {collection.title}
+                  </h3>
+                  {collection.description && (
+                    <p className="text-xs md:text-sm text-black/60 font-light line-clamp-2 mb-3">
+                      {collection.description}
+                    </p>
+                  )}
+                  <div className="flex items-center justify-center text-brand-green group-hover:translate-x-1 transition-transform duration-300">
+                    <span className="text-xs font-normal">Shop Now</span>
+                    <ChevronRight className="w-3 h-3 ml-1" />
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
 
         {collections.length > 4 && (

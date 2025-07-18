@@ -87,7 +87,7 @@ const GET_PRODUCT_QUERY = `
 
 async function getProduct(handle: string) {
   try {
-    const data = await shopifyFetch({
+    const data: any = await shopifyFetch({
       query: GET_PRODUCT_QUERY,
       variables: { handle },
     })
@@ -174,7 +174,7 @@ export default async function ProductPage({ params }: { params: { handle: string
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <PromoBar />
       <Header />
 
@@ -188,7 +188,7 @@ export default async function ProductPage({ params }: { params: { handle: string
 
         <ProductTabs product={product} />
 
-        <RelatedProducts products={relatedProducts.filter((p) => p.id !== product.id).slice(0, 4)} />
+        <RelatedProducts products={relatedProducts.filter((p: any) => p.id !== product.id).slice(0, 4)} />
       </div>
 
       <Footer />
