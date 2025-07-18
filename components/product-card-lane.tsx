@@ -72,9 +72,9 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
 
   return (
     <Link href={`/products/${product.handle}`} className="block">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-brand-dark/5 group">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 group">
         {/* Product Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden bg-brand-light/30">
+        <div className="relative aspect-[4/3] overflow-hidden" style={{ backgroundColor: '#F4F1E0' }}>
           {product.image ? (
             <Image
               src={product.image || "/placeholder.svg"}
@@ -86,25 +86,25 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
               onLoad={() => setImageLoaded(true)}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-brand-light/50">
-              <span className="text-brand-dark/40 text-xs font-light">No image</span>
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-black/40 text-xs font-light">No image</span>
             </div>
           )}
 
           {/* Product Badges */}
           <div className="absolute top-2 left-2 flex flex-col gap-1">
             {isNew && (
-              <Badge className="bg-blue-500 hover:bg-blue-600 text-white text-xs px-2 py-0.5 font-normal">
-                NEW GENETICS
+              <Badge className="bg-white text-black text-xs px-2 py-0.5 font-normal border border-black/10">
+                NEW
               </Badge>
             )}
             {isBestseller && (
-              <Badge className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-2 py-0.5 font-normal">
-                TOP STRAIN
+              <Badge className="bg-white text-black text-xs px-2 py-0.5 font-normal border border-black/10">
+                BESTSELLER
               </Badge>
             )}
             {isOnSale && (
-              <Badge className="bg-red-500 hover:bg-red-600 text-white text-xs px-2 py-0.5 font-normal">
+              <Badge className="bg-white text-black text-xs px-2 py-0.5 font-normal border border-black/10">
                 -{discount}%
               </Badge>
             )}
@@ -115,7 +115,7 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
             size="sm"
             variant="secondary"
             className={`absolute top-2 right-2 w-7 h-7 p-0 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              isWishlisted ? "text-red-500 bg-red-50" : "text-brand-dark bg-white/90"
+              isWishlisted ? "text-brand-green bg-white border border-brand-green" : "text-black bg-white/90 border border-black/10"
             }`}
             onClick={handleWishlist}
           >
@@ -125,21 +125,16 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
 
         {/* Product Information */}
         <div className="p-3">
-          {/* Vendor and Rating */}
+          {/* Rating */}
           <div className="flex items-center justify-between mb-2">
-            {product.vendor && (
-              <Badge variant="outline" className="text-xs text-brand-dark/60 border-brand-dark/20 font-light">
-                {product.vendor}
-              </Badge>
-            )}
             <div className="flex items-center gap-1">
               <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-              <span className="text-xs text-brand-dark/60 font-normal">4.8</span>
+              <span className="text-xs text-black/60 font-normal">4.8</span>
             </div>
           </div>
 
           {/* Product Title */}
-          <h3 className="font-normal text-sm leading-tight line-clamp-2 min-h-[2.5rem] text-brand-dark mb-2 group-hover:text-brand-green transition-colors">
+          <h3 className="font-normal text-sm leading-tight line-clamp-2 min-h-[2.5rem] text-black mb-2 group-hover:text-brand-green transition-colors">
             {product.title}
           </h3>
 
@@ -150,13 +145,13 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
                 <>
                   <span className="text-base font-medium text-brand-green">€{safePrice.toFixed(2)}</span>
                   {safeCompareAtPrice && safeCompareAtPrice > safePrice && (
-                    <span className="text-xs text-brand-dark/50 line-through font-light">
+                    <span className="text-xs text-black/50 line-through font-light">
                       €{safeCompareAtPrice.toFixed(2)}
                     </span>
                   )}
                 </>
               ) : (
-                <span className="text-sm font-medium text-brand-dark/60">Contact</span>
+                <span className="text-sm font-medium text-black/60">Contact</span>
               )}
             </div>
 
@@ -174,7 +169,7 @@ export function ProductCardLane({ product }: ProductCardLaneProps) {
           {/* Stock Status */}
           {!product.availableForSale && (
             <div className="mt-2">
-              <Badge variant="destructive" className="text-xs font-normal">
+              <Badge variant="outline" className="text-xs font-normal border-black/20 text-black/60">
                 Out of Stock
               </Badge>
             </div>

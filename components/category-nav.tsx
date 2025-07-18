@@ -1,91 +1,105 @@
+"use client"
+
 import Link from "next/link"
-import { Leaf, Droplets, Glasses, Wrench } from "lucide-react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ChevronRight } from "lucide-react"
 
 interface Collection {
   id: string
   title: string
   handle: string
   description?: string
-  image?: string
+  image?: {
+    url: string
+    altText?: string
+  }
 }
 
 interface CategoryNavProps {
   collections: Collection[]
 }
 
-const categoryIcons = {
-  cbd: Droplets,
-  seeds: Leaf,
-  glass: Glasses,
-  accessories: Wrench,
-}
-
 export function CategoryNav({ collections = [] }: CategoryNavProps) {
-  const defaultCategories = [
-    {
-      id: "cbd",
-      title: "CBD Products",
-      handle: "cbd",
-      description: "Premium CBD oils, gummies & wellness",
-      image: "/images/cbd-category.png",
-    },
-    {
-      id: "seeds",
-      title: "Cannabis Seeds",
-      handle: "seeds",
-      description: "Premium genetics & strains",
-      image: "/images/seeds-category.png",
-    },
-    {
-      id: "glass",
-      title: "Glass & Bongs",
-      handle: "glass",
-      description: "High-quality glass pieces",
-      image: "/images/glass-category.png",
-    },
-    {
-      id: "accessories",
-      title: "Accessories",
-      handle: "accessories",
-      description: "Grinders, papers & tools",
-      image: "/images/accessories-category.png",
-    },
-  ]
+  // Use first 4 collections from Shopify, or show fallback message
+  const categoriesToShow = collections.slice(0, 4)
 
-  const categoriesToShow = collections.length > 0 ? collections.slice(0, 4) : defaultCategories
+  if (categoriesToShow.length === 0) {
+    return (
+      <section className="py-8 md:py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl font-light text-black mb-2">Shop by Category</h2>
+            <p className="text-black/70 font-light">Loading categories...</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-medium text-brand-dark mb-4">Shop by Category</h2>
-          <p className="text-brand-dark/70 font-light max-w-2xl mx-auto">
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-light text-black mb-2">Shop by Category</h2>
+          <p className="text-black/70 font-light">
             Discover our carefully curated selection of premium cannabis products and accessories
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {categoriesToShow.map((category) => {
-            const IconComponent = categoryIcons[category.handle as keyof typeof categoryIcons] || Leaf
-            return (
-              <Link
-                key={category.id}
-                href={`/collections/${category.handle}`}
-                className="group bg-brand-light/50 rounded-2xl p-6 hover:bg-brand-light transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="text-center">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-green/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-green/20 transition-colors">
-                    <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-brand-green" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {categoriesToShow.map((collection) => (
+            <Link
+              key={collection.id}
+              href={`/collections/${collection.handle}`}
+              className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+            >
+              <div className="aspect-square relative overflow-hidden" style={{ backgroundColor: '#F4F1E0' }}>
+                {collection.image?.url ? (
+                  <Image
+                    src={collection.image.url}
+                    alt={collection.image.altText || collection.title}
+                    fill
+                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-black/40 text-sm font-light">No image</span>
                   </div>
-                  <h3 className="font-medium text-brand-dark mb-2 text-sm md:text-base">{category.title}</h3>
-                  <p className="text-xs md:text-sm text-brand-dark/70 font-light">
-                    {category.description || "Premium quality products"}
+                )}
+              </div>
+              
+              <div className="p-4">
+                <h3 className="font-medium text-sm md:text-base text-black mb-1 group-hover:text-brand-green transition-colors">
+                  {collection.title}
+                </h3>
+                {collection.description && (
+                  <p className="text-xs md:text-sm text-black/60 font-light line-clamp-2">
+                    {collection.description}
                   </p>
+                )}
+                <div className="flex items-center mt-2 text-brand-green group-hover:translate-x-1 transition-transform duration-300">
+                  <span className="text-xs font-normal">Shop Now</span>
+                  <ChevronRight className="w-3 h-3 ml-1" />
                 </div>
-              </Link>
-            )
-          })}
+              </div>
+            </Link>
+          ))}
         </div>
+
+        {collections.length > 4 && (
+          <div className="text-center mt-8">
+            <Link href="/collections">
+              <Button 
+                variant="outline" 
+                className="border-black/20 text-black hover:bg-black hover:text-white transition-all duration-300"
+              >
+                View All Categories
+                <ChevronRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )

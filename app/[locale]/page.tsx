@@ -3,7 +3,6 @@ import { PromoBar } from "@/components/promo-bar"
 import { CategoryNav } from "@/components/category-nav"
 import { HeroBanners } from "@/components/hero-banners"
 import { DealsSection } from "@/components/deals-section"
-import { ProductGrid } from "@/components/product-grid"
 import { CollectionsShowcase } from "@/components/collections-showcase"
 import { CollectionLanes } from "@/components/collection-lanes"
 import { Newsletter } from "@/components/newsletter"
@@ -18,9 +17,8 @@ import { Suspense } from "react"
 export const dynamic = "force-dynamic"
 
 export default async function HomePage() {
-  // Fetch products and collections from Shopify (with fallback data)
-  const [products, collections, collectionsWithProducts] = await Promise.all([
-    getProducts(20).catch(() => []),
+  // Fetch collections from Shopify (with fallback data)
+  const [collections, collectionsWithProducts] = await Promise.all([
     getCollections(8).catch(() => []),
     getAllCollectionsWithProducts(6, 12).catch(() => []), // Get up to 6 collections with 12 products each
   ])
@@ -32,9 +30,6 @@ export default async function HomePage() {
       <HeroBanners />
       <Suspense fallback={<div className="h-20 flex items-center justify-center">Loading categories...</div>}>
         <CategoryNav collections={collections} />
-      </Suspense>
-      <Suspense fallback={<div className="h-60 flex items-center justify-center">Loading products...</div>}>
-        <ProductGrid products={products} />
       </Suspense>
       <CollectionLanes collections={collectionsWithProducts} />
       <AboutSection />
