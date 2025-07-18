@@ -174,7 +174,7 @@ export default async function ProductPage({ params }: { params: { handle: string
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ backgroundColor: '#F4F1E0' }}>
       <PromoBar />
       <Header />
 

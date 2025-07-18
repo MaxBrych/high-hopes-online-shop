@@ -1,8 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ShoppingCart } from "lucide-react"
+"use client"
+
+import { ProductCardLane } from "@/components/product-card-lane"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 interface Product {
   id: string
@@ -12,7 +11,10 @@ interface Product {
   compareAtPrice: number | null
   image: string | null
   imageAlt: string
+  variantId: string
   availableForSale: boolean
+  vendor?: string
+  tags?: string[]
 }
 
 interface RelatedProductsProps {
@@ -23,66 +25,54 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
   if (products.length === 0) return null
 
   return (
-    <div className="space-y-6">
-      <h2 className="text-xl md:text-2xl font-bold">You Might Also Like</h2>
+    <section className="py-12 md:py-16 bg-white rounded-t-3xl -mx-4 px-4 md:mx-0 md:px-0">
+      <div className="space-y-6">
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl md:text-3xl font-extralight text-black tracking-wide">You Might Also Like</h2>
+          <p className="text-black/70 font-light tracking-wide mt-2">Discover more premium products</p>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        {products.map((product) => {
-          const discount =
-            product.compareAtPrice && product.compareAtPrice > product.price
-              ? Math.round(((product.compareAtPrice - product.price) / product.compareAtPrice) * 100)
-              : null
-
-          return (
-            <Card key={product.id} className="group hover:shadow-md transition-shadow">
-              <CardContent className="p-0">
-                <Link href={`/products/${product.handle}`} className="block">
-                  <div className="aspect-square bg-white overflow-hidden rounded-t-lg relative">
-                    {product.image ? (
-                      <Image
-                        src={product.image || "/placeholder.svg"}
-                        alt={product.imageAlt}
-                        fill
-                        className="object-contain p-4 group-hover:scale-105 transition-transform"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                        <span className="text-gray-400 text-xs">No image</span>
-                      </div>
-                    )}
+        {/* Products Carousel */}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {products.map((product) => (
+                <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-[280px] md:basis-[320px] lg:basis-[350px]">
+                  <div className="h-full">
+                    <ProductCardLane product={product} />
                   </div>
-                </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Custom Navigation Buttons */}
+            <CarouselPrevious 
+              className="hidden md:flex -left-4 lg:-left-6 bg-white border border-black/10 hover:bg-gray-50 transition-all duration-300" 
+            />
+            <CarouselNext 
+              className="hidden md:flex -right-4 lg:-right-6 bg-white border border-black/10 hover:bg-gray-50 transition-all duration-300" 
+            />
+          </Carousel>
 
-                <div className="p-4">
-                  <Link href={`/products/${product.handle}`}>
-                    <h3 className="font-medium text-sm mb-2 line-clamp-2 hover:text-green-600 transition-colors">
-                      {product.title}
-                    </h3>
-                  </Link>
-
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-lg font-bold text-green-600">€{product.price.toFixed(2)}</span>
-                      {product.compareAtPrice && product.compareAtPrice > product.price && (
-                        <span className="text-sm text-gray-500 line-through">€{product.compareAtPrice.toFixed(2)}</span>
-                      )}
-                    </div>
-                  </div>
-
-                  <Button
-                    size="sm"
-                    className="w-full bg-green-600 hover:bg-green-700"
-                    disabled={!product.availableForSale}
-                  >
-                    <ShoppingCart className="w-3 h-3 mr-1" />
-                    Add to Cart
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          )
-        })}
+          {/* Mobile scroll indicator */}
+          <div className="flex justify-center mt-4 md:hidden">
+            <div className="flex space-x-1">
+              {Array.from({ length: Math.ceil(products.length / 1) }).map((_, i) => (
+                <div 
+                  key={i} 
+                  className="w-2 h-2 rounded-full bg-black/20" 
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
