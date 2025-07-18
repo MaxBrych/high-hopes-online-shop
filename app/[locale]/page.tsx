@@ -11,7 +11,7 @@ import { Footer } from "@/components/footer"
 import { AboutSection } from "@/components/about-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { SubscriptionPlans } from "@/components/subscription-plans"
-import { getProducts, getCollections, getCollectionsWithProducts } from "@/lib/shopify-server"
+import { getProducts, getCollections, getAllCollectionsWithProducts } from "@/lib/shopify-server"
 import { Suspense } from "react"
 
 // Force dynamic rendering for this page since it fetches data
@@ -22,7 +22,7 @@ export default async function HomePage() {
   const [products, collections, collectionsWithProducts] = await Promise.all([
     getProducts(20).catch(() => []),
     getCollections(8).catch(() => []),
-    getCollectionsWithProducts(["cbd", "accessories", "glass"], 10).catch(() => []),
+    getAllCollectionsWithProducts(6, 12).catch(() => []), // Get up to 6 collections with 12 products each
   ])
 
   return (

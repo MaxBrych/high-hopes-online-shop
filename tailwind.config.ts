@@ -58,6 +58,9 @@ const config: Config = {
         "brand-green": "#4caf50",
         "brand-green-light": "#66bb6a",
         "brand-green-dark": "#388e3c",
+        "brand-purple": "#8b5cf6",
+        "brand-purple-light": "#a78bfa",
+        "brand-purple-dark": "#7c3aed",
       },
       borderRadius: {
         lg: "var(--radius)",
