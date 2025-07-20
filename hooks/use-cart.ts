@@ -15,6 +15,7 @@ interface CartItem {
 interface CartStore {
   items: CartItem[]
   isOpen: boolean
+  shopifyCartId: string | null
   addItem: (item: Omit<CartItem, "quantity">) => void
   removeItem: (id: string) => void
   updateQuantity: (id: string, quantity: number) => void
@@ -22,6 +23,8 @@ interface CartStore {
   toggleCart: () => void
   getTotalItems: () => number
   getTotalPrice: () => number
+  checkout: () => Promise<void>
+  createShopifyCart: () => Promise<string>
 }
 
 export const useCart = create<CartStore>()(
@@ -29,6 +32,7 @@ export const useCart = create<CartStore>()(
     (set, get) => ({
       items: [],
       isOpen: false,
+      shopifyCartId: null,
 
       addItem: (newItem) => {
         const items = get().items
@@ -65,7 +69,7 @@ export const useCart = create<CartStore>()(
       },
 
       clearCart: () => {
-        set({ items: [] })
+        set({ items: [], shopifyCartId: null })
       },
 
       toggleCart: () => {
@@ -78,6 +82,53 @@ export const useCart = create<CartStore>()(
 
       getTotalPrice: () => {
         return get().items.reduce((total, item) => total + item.price * item.quantity, 0)
+      },
+
+      createShopifyCart: async () => {
+        const items = get().items
+        
+        if (items.length === 0) {
+          throw new Error('Cart is empty')
+        }
+
+        try {
+          const response = await fetch('/api/shopify/cart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              lines: items.map(item => ({
+                variantId: item.variantId,
+                quantity: item.quantity,
+              })),
+            }),
+          })
+
+          if (!response.ok) {
+            throw new Error('Failed to create cart')
+          }
+
+          const data = await response.json()
+          set({ shopifyCartId: data.cart.id })
+          
+          return data.cart.checkoutUrl
+        } catch (error) {
+          console.error('Error creating Shopify cart:', error)
+          throw error
+        }
+      },
+
+      checkout: async () => {
+        try {
+          const checkoutUrl = await get().createShopifyCart()
+          
+          // Redirect to Shopify checkout
+          window.location.href = checkoutUrl
+        } catch (error) {
+          console.error('Checkout error:', error)
+          throw error
+        }
       },
     }),
     {

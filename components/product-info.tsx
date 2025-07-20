@@ -65,6 +65,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
       variantId: selectedVariant.id,
       title: product.title,
       price: selectedVariant.price,
+      image: product.images[0]?.url || null,
     })
     setIsAddedToCart(true)
     setTimeout(() => setIsAddedToCart(false), 2000)
